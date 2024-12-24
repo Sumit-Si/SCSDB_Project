@@ -13,9 +13,9 @@ function SideNav() {
 
       <nav className="mt-10 mb-5 text-zinc-400 flex flex-col gap-2">
         <h4 className="font-semibold text-lg text-white mb-2">New Feeds</h4>
-        {[{name:"Trending",icon:"ri-fire-fill"},{name:"Popular",icon:"ri-sparkling-fill"},{name:"Movies",icon:"ri-movie-2-fill"},{name:"Tv Shows",icon:"ri-tv-2-fill"},{name:"People",icon:"ri-team-fill"}].map(
+        {[{name:"Trending",icon:"ri-fire-fill",forwardTo: "/trending"},{name:"Popular",icon:"ri-sparkling-fill",forwardTo: "/popular"},{name:"Movies",icon:"ri-movie-2-fill",forwardTo: "/movie"},{name:"Tv Shows",icon:"ri-tv-2-fill",forwardTo: "/tvshows"},{name:"People",icon:"ri-team-fill",forwardTo: "/people"}].map(
           (navLink) => (
-            <Link className="p-4 hover:bg-[#6556cd] rounded-lg hover:text-white duration-300">
+            <Link to={navLink.forwardTo} className="p-4 hover:bg-[#6556cd] rounded-lg hover:text-white duration-300">
               <i className={navLink.icon}></i> {navLink.name}
             </Link>
           )

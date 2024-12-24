@@ -21,7 +21,7 @@ function TopNav() {
   }, [query]);
 
   return (
-    <div className="bg-zinc-700 w-full h-[10vh] relative flex pl-20 gap-4 items-center">
+    <div className="w-full h-[10vh] relative flex pl-20 gap-4 items-center">
       <i className="text-zinc-200 font-semibold text-xl ri-search-2-line"></i>
       <input
         type="text"
@@ -39,7 +39,7 @@ function TopNav() {
         ></i>
       )}
 
-      <div className="w-[50%] max-h-[40vh] absolute top-[90%] bg-zinc-900 rounded-lg overflow-auto">
+      <div className="w-[50%] max-h-[40vh] z-[100] absolute top-[90%] bg-zinc-900 rounded-lg overflow-auto">
         {query.length > 0 &&
           searches.map((sRes, index) => (
             <div
