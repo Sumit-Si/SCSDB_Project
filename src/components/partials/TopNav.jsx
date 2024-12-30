@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "../../utils/axios";
 import noImage from "/No_Image_Available.jpg";
+import { Link } from "react-router-dom";
 
 function TopNav() {
   const [query, setQuery] = useState("");
@@ -42,7 +43,7 @@ function TopNav() {
       <div className="w-[50%] max-h-[40vh] z-[100] absolute top-[90%] bg-zinc-900 rounded-lg overflow-auto">
         {query.length > 0 &&
           searches.map((sRes, index) => (
-            <div
+            <Link to={`/${sRes.media_type}/details/${sRes.id}`}
               key={index}
               className="flex items-center bg-zinc-800 w-full py-5 px-4 text-zinc-200 hover:bg-zinc-500"
             >
@@ -64,7 +65,7 @@ function TopNav() {
                   sRes.original_title ||
                   sRes.original_name}
               </h4>
-            </div>
+            </Link>
           ))}
       </div>
     </div>

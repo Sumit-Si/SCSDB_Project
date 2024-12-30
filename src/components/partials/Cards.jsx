@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Cards({data,title}) {
-    console.log(data);
+    console.log(data,title);
   return (
     <div className='flex flex-wrap gap-8 w-full mt-3 justify-center'>
         {data.map((card,index) => (
-            <Link key={index} className='relative'>
+            <Link to={`/${card.media_type || title}/details/${card.id}`} key={index} className='relative'>
                 <img className='h-72 w-56 rounded-lg object-cover' src={`https://image.tmdb.org/t/p/original${
                   card.poster_path || card.backdrop_path || card.profile_path
                 }`} alt="" />
