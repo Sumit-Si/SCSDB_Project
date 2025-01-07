@@ -11,7 +11,7 @@ function Cards({ data, title }) {
           <Link
             to={`/${card.media_type || title}/details/${card.id}`}
             key={index}
-            className="relative"
+            className="relative max-w-56"
           >
             <img
               className="h-72 w-56 rounded-lg object-cover"
