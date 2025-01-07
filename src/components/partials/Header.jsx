@@ -33,7 +33,7 @@ function Header({ data }) {
             {data.media_type.toUpperCase() || "no Information"}
           </p>
         </div>
-        <Link className="border border-rose-800 hover:bg-rose-800 duration-300 mt-4 text-white rounded-xl py-4 px-8">
+        <Link to={`${data.media_type}/details/${data.id}/trailer`} className="border border-rose-800 hover:bg-rose-800 duration-300 mt-4 text-white rounded-xl py-4 px-8">
           Watch Trailer
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import { asyncLoadMovie, removeMovie } from "../store/actions/MovieActions";
 import Loading from "./Loading";
 import TopNav from "./partials/TopNav";
@@ -33,7 +33,7 @@ function MovieDetails() {
         backgroundSize: "cover",
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url(https://image.tmdb.org/t/p/original${info.detail.backdrop_path})`,
       }}
-      className="min-h-screen w-full px-[3%] py-[1%]"
+      className="min-h-screen relative w-full px-[3%] py-[1%]"
     >
       {/* Part 1 : navigation  */}
       <nav className="w-full h-[8vh] items-center flex gap-10 text-xl text-zinc-200">
@@ -196,6 +196,8 @@ function MovieDetails() {
           info.recommendations.length > 0 ? info.recommendations : info.similar
         }
       />
+
+      <Outlet />
     </div>
   ) : (
     <Loading />
