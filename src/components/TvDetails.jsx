@@ -232,7 +232,9 @@ function TvDetails() {
                 {info.detail.name || d.title || d.original_title || d.original_name} - <span className="text-sm text-zinc-400">{d.name}</span>
               </h1>
             </div>
-          )) : (<h3 className="text-3xl text-semibold text-center">Nothing to Show</h3>)}
+          )) : (<h3 className="font-semibold text-xl mt-5 text-zinc-400 text-center">
+            Nothing to Show
+          </h3>)}
         </div>
       </div>
 

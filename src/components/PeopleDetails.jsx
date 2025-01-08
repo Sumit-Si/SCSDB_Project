@@ -199,7 +199,9 @@ function PeopleDetails() {
                   </div>
                 ))
               ) : (
-                <h3 className="text-zinc-400">No Data To Show</h3>
+                <h3 className="font-semibold text-xl mt-5 text-zinc-400 text-center">
+      Nothing to Show
+    </h3>
               )}
             </div>
           </div>
